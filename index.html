@@ -42,70 +42,11 @@
             100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
         }
 
-        /* Navbar Sofisticada */
+        /* Navbar */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 15, 30, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 20px 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 107, 157, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: none;
         }
 
-        nav .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 2px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 50px;
-        }
-
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9em;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #ff6b9d, #ff8fab);
-            transition: width 0.4s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
