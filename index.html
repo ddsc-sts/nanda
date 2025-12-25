@@ -311,14 +311,15 @@
             position: relative;
         }
 
-        .moment-image::before {
-            content: '📸';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4em;
-            opacity: 0.3;
+        .moment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .moment-card:hover .moment-image img {
+            transform: scale(1.05);
         }
 
         .moment-content {
@@ -422,6 +423,12 @@
             opacity: 0.8;
         }
 
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Galeria */
         .gallery-grid {
             display: grid;
@@ -442,6 +449,17 @@
             align-items: center;
             justify-content: center;
             font-size: 4em;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         .gallery-item:hover {
@@ -606,7 +624,9 @@
 
             <div class="moments-grid">
                 <div class="moment-card">
-                    <div class="moment-image"></div>
+                    <div class="moment-image">
+                        <img src="img4.jpg" alt="O Início">
+                    </div>
                     <div class="moment-content">
                         <div class="moment-period">Janeiro - Março</div>
                         <h3>O Início</h3>
@@ -615,7 +635,9 @@
                 </div>
 
                 <div class="moment-card">
-                    <div class="moment-image"></div>
+                    <div class="moment-image">
+                        <img src="img5.jpg" alt="Crescimento">
+                    </div>
                     <div class="moment-content">
                         <div class="moment-period">Abril - Junho</div>
                         <h3>Crescimento</h3>
@@ -624,7 +646,9 @@
                 </div>
 
                 <div class="moment-card">
-                    <div class="moment-image"></div>
+                    <div class="moment-image">
+                        <img src="img7.jpg" alt="Consolidação">
+                    </div>
                     <div class="moment-content">
                         <div class="moment-period">Julho - Setembro</div>
                         <h3>Consolidação</h3>
@@ -633,7 +657,9 @@
                 </div>
 
                 <div class="moment-card">
-                    <div class="moment-image"></div>
+                    <div class="moment-image">
+                        <img src="img6.jpg" alt="O Futuro">
+                    </div>
                     <div class="moment-content">
                         <div class="moment-period">Outubro - Dezembro</div>
                         <h3>O Futuro</h3>
@@ -659,11 +685,15 @@
                         <h3>Começar do Zero</h3>
                         <p>Você entrou na minha vida como alguém que eu não sabia que estava esperando. De repente, tudo fez sentido.</p>
                     </div>
-                    <div class="timeline-image">📅</div>
+                    <div class="timeline-image">
+                        <img src="img1.jpg" alt="Janeiro">
+                    </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-image">❤️</div>
+                    <div class="timeline-image">
+                        <img src="img2.jpg" alt="Abril">
+                    </div>
                     <div class="timeline-content">
                         <div class="timeline-date">Abril 2025</div>
                         <h3>A Aceleração</h3>
@@ -674,10 +704,12 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-date">Novembro 2025</div>
-                        <h3>Estabilidade e Paz</h3>
-                        <p>Chegamos a um lugar onde tudo é tranquilo, seguro, real. Você é a pessoa certa, no tempo certo, na minha vida.</p>
+                        <h3>Encontrei Meu Lar</h3>
+                        <p>Não é um lugar, é você. Encontrei em você o meu refúgio, meu abrigo, minha paz. Você é o lugar onde meu coração descansa.</p>
                     </div>
-                    <div class="timeline-image">✨</div>
+                    <div class="timeline-image">
+                        <img src="img3.jpg" alt="Novembro">
+                    </div>
                 </div>
             </div>
         </div>
@@ -692,12 +724,21 @@
             </div>
 
             <div class="gallery-grid">
-                <div class="gallery-item">📸</div>
-                <div class="gallery-item">😊</div>
-                <div class="gallery-item">🎵</div>
-                <div class="gallery-item">🌙</div>
-                <div class="gallery-item">🎁</div>
-                <div class="gallery-item">🌹</div>
+                <div class="gallery-item">
+                    <img src="img8.jpg" alt="Memória">
+                </div>
+                <div class="gallery-item">
+                    <img src="img9.jpg" alt="Memória">
+                </div>
+                <div class="gallery-item">
+                    <img src="img10.jpg" alt="Memória">
+                </div>
+                <div class="gallery-item">
+                    <img src="img11.jpg" alt="Memória">
+                </div>
+                <div class="gallery-item">
+                    <img src="img12.jpg" alt="Memória">
+                </div>
             </div>
         </div>
     </section>
