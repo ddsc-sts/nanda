@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* Partículas Flutuantes */
         .particle {
             position: fixed;
             width: 4px;
@@ -42,7 +41,6 @@
             100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
         }
 
-        /* Navbar */
         nav {
             display: none;
         }
@@ -135,7 +133,6 @@
             background: linear-gradient(135deg, #ff8fab 0%, #ff6b9d 100%);
         }
 
-        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -170,7 +167,6 @@
             letter-spacing: 1px;
         }
 
-        /* Mensagem de Amor */
         .love-message {
             background: linear-gradient(135deg, rgba(255, 107, 157, 0.08) 0%, rgba(255, 137, 171, 0.05) 100%);
             border: 2px solid rgba(255, 107, 157, 0.3);
@@ -220,7 +216,6 @@
             50% { transform: scale(1); }
         }
 
-        /* Cards de Momento */
         .moments-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,7 +285,6 @@
             font-weight: 300;
         }
 
-        /* Timeline */
         .timeline-section {
             position: relative;
             padding: 40px 0;
@@ -357,11 +351,6 @@
             overflow: hidden;
             box-shadow: 0 25px 70px rgba(255, 107, 157, 0.25);
             background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(255, 137, 171, 0.2));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5em;
-            opacity: 0.8;
         }
 
         .timeline-image img {
@@ -370,7 +359,6 @@
             object-fit: cover;
         }
 
-        /* Galeria */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -386,10 +374,6 @@
             cursor: pointer;
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 2px solid rgba(255, 107, 157, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4em;
         }
 
         .gallery-item img {
@@ -409,7 +393,32 @@
             box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
         }
 
-        /* Footer */
+        .music-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 107, 157, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 50px rgba(255, 107, 157, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        .music-toggle:hover {
+            border-color: rgba(255, 107, 157, 0.6);
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.35);
+            transform: scale(1.1);
+        }
+
         footer {
             background: linear-gradient(135deg, rgba(15, 15, 30, 0.95) 0%, rgba(26, 10, 46, 0.95) 100%);
             border-top: 1px solid rgba(255, 107, 157, 0.2);
@@ -431,19 +440,9 @@
             font-weight: 600;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 0 30px;
-            }
-
-            nav .container {
-                padding: 0 30px;
-            }
-
-            nav ul {
-                gap: 20px;
-                font-size: 0.8em;
             }
 
             .hero {
@@ -494,34 +493,15 @@
     </style>
 </head>
 <body>
-    <!-- Partículas -->
-    <script>
-        function createParticles() {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            particle.style.animationDuration = (Math.random() * 20 + 20) + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(particle);
-            setTimeout(() => particle.remove(), 40000);
-        }
-        setInterval(createParticles, 800);
-    </script>
+    <!-- Audio de fundo -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://drive.google.com/uc?export=download&id=10DdSLShc4nkXzm7GHEucrNBB1moBpO0c" type="audio/mpeg">
+    </audio>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="container">
-            <div class="logo">💜 Nossa História</div>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#momentos">Momentos</a></li>
-                <li><a href="#timeline">Jornada</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#final">Mensagem</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Botão de controle de música -->
+    <div class="music-toggle" onclick="toggleMusic()">
+        <span id="musicIcon">🔊</span>
+    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -588,7 +568,7 @@
 
                 <div class="moment-card">
                     <div class="moment-image">
-                        <img src="img7.jpg" alt="Consolidação">
+                        <img src="img6.jpg" alt="Consolidação">
                     </div>
                     <div class="moment-content">
                         <div class="moment-period">Julho - Setembro</div>
@@ -599,7 +579,7 @@
 
                 <div class="moment-card">
                     <div class="moment-image">
-                        <img src="img6.jpg" alt="O Futuro">
+                        <img src="img7.jpg" alt="O Futuro">
                     </div>
                     <div class="moment-content">
                         <div class="moment-period">Outubro - Dezembro</div>
@@ -684,30 +664,56 @@
         </div>
     </section>
 
-    <!-- Mensagem Final -->
-    <section id="final">
-        <div class="container">
-            <div class="love-message">
-                <h2>Para Sempre, A Partir de Agora</h2>
-                <p>Não sei o que o futuro nos reserva. Mas tenho certeza de uma coisa: quero estar ao seu lado para descobrir.</p>
-                <p>Você me fez acreditar que existe amor de verdade. Que existe alguém feito para nós. Que vale a pena lutar, se dedicar, se entregar completamente.</p>
-                <p>Então aqui está minha promessa: vou amar você com tudo que tenho. Nos bons dias e nos difíceis. Para sempre. Começando agora.</p>
-                <p style="font-size: 1.4em; margin-top: 50px; font-weight: 600;">
-                    <span class="heart-beat">💜</span> Te Amo <span class="heart-beat">💜</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p><strong>Portfólio Amoroso 2025</strong></p>
-            <p>Feito com toda dedicação, paixão e amor para a pessoa mais especial do meu mundo</p>
-            <p style="margin-top: 25px; color: #ff8fab; font-weight: 600;">
-                © 2025 • Uma história que só faz sentido porque você existe
-            </p>
+            <p><strong>Nossa História</strong></p>
+            <p>Um ano de amor, crescimento e evolução</p>
+            <p>2025 - Para sempre no meu coração 💜</p>
         </div>
     </footer>
+
+    <script>
+        // Criar partículas
+        function createParticles() {
+            const particleCount = 30;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                document.body.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Controle de música
+        const music = document.getElementById('backgroundMusic');
+        const musicIcon = document.getElementById('musicIcon');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                musicIcon.textContent = '🔇';
+                isPlaying = false;
+            } else {
+                music.play().catch(e => console.log('Erro ao tocar:', e));
+                musicIcon.textContent = '🔊';
+                isPlaying = true;
+            }
+        }
+
+        // Tentar tocar automaticamente quando o usuário interagir com a página
+        document.addEventListener('click', function playOnFirstClick() {
+            if (!isPlaying) {
+                music.play().catch(e => console.log('Erro ao tocar:', e));
+                musicIcon.textContent = '🔊';
+                isPlaying = true;
+            }
+            document.removeEventListener('click', playOnFirstClick);
+        }, { once: true });
+    </script>
 </body>
 </html>
